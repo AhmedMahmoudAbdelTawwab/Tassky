@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:tassky/features/on_pording/first_screen.dart';
+import 'package:tassky/features/on_pording/secound_screen.dart';
+import 'package:tassky/features/on_pording/thired_screen.dart';
 
 void main() {
   runApp(Tassky());
@@ -10,7 +13,13 @@ class Tassky extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(appBar: AppBar(title: Text("tassky"))),
+      home: FirstScreen(),
+      routes: {
+        FirstScreen.routeName: (context) => FirstScreen(),
+        SecoundScreen.routeName: (context) => SecoundScreen(),
+        ThiredScreen.routeName: (context) => ThiredScreen(),
+      },
+      debugShowCheckedModeBanner: false,
     );
   }
 }
